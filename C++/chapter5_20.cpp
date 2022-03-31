@@ -15,8 +15,14 @@ using namespace std;
 int main() {
     ifstream dataFile;
     dataFile.open("rocket1.txt");
+    if(dataFile.fail()) {
+        cout << "rocket1.txt cannot be opened.";
+        exit(1);
+    };
 
-    cout
+    int n(0);
+    dataFile >> n;
+    cout << n << endl;
 
     return 0;
 };
