@@ -22,7 +22,20 @@ int main() {
 
     int n(0);
     dataFile >> n;
-    cout << n << endl;
+
+    double time(0), altitude(0), velocity(0), acceleration(0);
+    double currentAlt(0), difference(0), x(0);
+
+    for(int i = 0; i < n; i++) {
+        dataFile >> time >> altitude >> velocity >> acceleration;
+        difference = altitude - currentAlt;
+        cout << difference << endl;
+        if(difference<0) {
+            cout << altitude << endl;
+        }
+        currentAlt = altitude;
+    };
+
 
     return 0;
 };
