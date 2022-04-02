@@ -28,11 +28,8 @@ int main() {
 
     for(int i = 0; i < n; i++) {
         dataFile >> time >> altitude >> velocity >> acceleration;
-        difference = altitude - currentAlt;
-        cout << difference << endl;
-        if(difference<0) {
-            cout << altitude << endl;
-        }
+        // difference = altitude - currentAlt;
+        cout << currentAlt << ' ' << altitude << endl;
         currentAlt = altitude;
     };
 

@@ -17,7 +17,7 @@ using namespace std;
 
 int main() {
     // declare and init objects
-    double initial, increment, final, time, height, velocity, max_time{0}, max_height{0};
+    double initial, increment, final, time, height, velocity, acceleration, max_time{0}, max_height{0};
     int loops, itime;
     string filename;
     ofstream balloon;
@@ -47,8 +47,8 @@ int main() {
 
     // print report heading
     cout << "\n\nWeather Balloon Information \n";
-    cout << "Time    Height    Velocity\n";
-    cout << "(hrs)    (meters)    (meters/s)";
+    cout << "Time    Height    Velocity     Acceleration\n";
+    cout << "(hrs)   (meters)  (meters/s)   (meters/s^2)";
 
     // determine number of iterations required
     // use integer index to avoid rounding error
@@ -59,12 +59,13 @@ int main() {
 
         height = -0.12*pow(time,4) + 12*pow(time,3) - 380*time*time + 4100*time + 220;
         velocity = -0.48*pow(time,3) + 36*time*time - 760*time + 4100;
+        acceleration = -1.44*pow(time,2) + 72*time + 720;
 
         // print report information to screen
-        cout << setw(6) << time << setw(10) << height << setw(10) << velocity/3600 << '\n';
+        cout << setw(6) << time << setw(10) << height << setw(10) << velocity/3600 << setw(10) << acceleration / 3600 << '\n';
 
         // write report information to a file
-        balloon << setw(6) << time << setw(10) << height << setw(10) << velocity/3600 << '\n';
+        balloon << setw(6) << time << setw(10) << height << setw(10) << velocity/3600 << setw(10) << acceleration / 3600 << '\n';
 
         if (height > max_height)
         {
