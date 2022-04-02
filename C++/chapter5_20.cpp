@@ -28,8 +28,11 @@ int main() {
 
     for(int i = 0; i < n; i++) {
         dataFile >> time >> altitude >> velocity >> acceleration;
-        // difference = altitude - currentAlt;
-        cout << currentAlt << ' ' << altitude << endl;
+        difference = altitude - currentAlt;
+        if (difference < 0) {
+            cout << "Time at which rocket starts returning to Earth: " << time << endl;
+            break; 
+        }
         currentAlt = altitude;
     };
 
