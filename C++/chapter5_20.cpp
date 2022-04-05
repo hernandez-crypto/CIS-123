@@ -16,7 +16,7 @@ int main() {
     ifstream dataFile; // syntax for getting a file opened
     dataFile.open("rocket1.txt"); // opening the rocket1.txt file..
     if(dataFile.fail()) {  // if rocket1.txt can not be opened due to error...
-        cout << "rocket1.txt cannot be opened."; // print out to the console this string
+        cerr << "rocket1.txt cannot be opened.\n"; // print out to the console this string
         exit(1); // exit the program
     };
 
