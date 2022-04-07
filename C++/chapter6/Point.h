@@ -32,4 +32,4 @@ class Point
         void setX(double newX);
         void setY(double newY);
 
-}
+};

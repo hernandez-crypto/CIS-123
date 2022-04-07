@@ -22,7 +22,7 @@ int main() {
     double dist, radiusOuter, radiusInner;
 
     // open input file
-    ifstream fin("compositeMaterialsSim1.dat");
+    ifstream fin("compositeMaterialSim1.dat");
     if (fin.fail()) 
     {
         cerr << "Could not open data file compositeMaterialSim1.dat \n";
