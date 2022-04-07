@@ -39,9 +39,12 @@ double Point::operator -(const Point& rhs) const
 
 bool Point::operator ==(const Point& rhs) const
 {
-    if(rhs.xCord == xCord && rhs.yCord == yCord) {
+    if(rhs.xCord == xCord && rhs.yCord == yCord) 
+    {
         return true;
-    } else {
+    } 
+    else 
+    {
         return false;
     }
 }
