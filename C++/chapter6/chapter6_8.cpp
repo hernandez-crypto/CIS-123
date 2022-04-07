@@ -37,4 +37,24 @@ int main() {
     fin >> radiusOuter >> radiusInner;
 
     // while not end of file input point data
+    fin >> x >> y;
+    while(!fin.eof()) 
+    {
+        ++pointCount; // increment point count
+        p.setX(x);
+        p.setY(y);
+        dist = p - ORIGIN;
+        if(dist > criticalRad) 
+        {
+            ++outside; // increment outside counter
+        }
+        fin >> x >> y;
+    }
+
+    // print results
+    // premultiply by 100.0 to force floating point arithmetic
+    cout << (100.0*outside/pointCount)
+         << "% lie outside the critical radius \n";
+
+    return 0;
 }
