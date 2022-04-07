@@ -1,8 +1,9 @@
 /*
+Julio Cesar Hernandez
 CIS 123 701 
 April 7th 2022
 
-Class for assignments in week 10 homework
+Class "Points" for assignments in week 10 homework
 
 */
 
@@ -12,7 +13,7 @@ class Point
     private:
         double xCord, yCord; // data members
     public:
-    // class methods
+        // class methods
         Point(); // default constructor
         Point(double x, double y); // parametized constructor
         // overload operators
