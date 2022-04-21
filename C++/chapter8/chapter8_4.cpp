@@ -11,13 +11,14 @@ This program determines the locations of peaks in an elevation grid of data.
 #include <string> // required for string
 using namespace std;
 
+int const N(25);
+
 // function prototype
 bool isPeak(const double grid[][N], int r, int c);
 
 int main() 
 {
     // declare objects
-    int const N(25);
     int nrows, ncols;
     double elevation[N][N];
     string filename;
@@ -35,22 +36,22 @@ int main()
     file1 >> nrows >> ncols;
     if(nrows > N || ncols > N) 
     {
-        cerr << "Grid is too large, adjust program.";
+        cerr << "Grid is too large, adjust program.\n";
         exit(1);
     }
     // read information from data file into array
     for(int i=0; i<nrows; ++i)
     {
-        for(int j=0; j<ncols; ++i)
-        {
-            file >> elevation[i][j];
+        for(int j=0; j<ncols; ++j)
+        {   
+            file1 >> elevation[i][j];
         }
     }
     // determine and print peak locations
     cout << "top left point defined as row 0, column 0\n";
      for(int i=0; i<nrows-1; ++i)
     {
-        for(int j=0; j<ncols-1; ++i)
+        for(int j=0; j<ncols-1; ++j)
         {
             if(isPeak(elevation, i, j)) 
             {
@@ -60,7 +61,7 @@ int main()
         }
     }
     
-    //mclose file
+    // close file
     file1.close();
     // exit program
     return 0;
@@ -68,14 +69,11 @@ int main()
 
 bool isPeak(const double grid[][N], int i, int j)
 {
-    if
-    (
-    (grid[i-1][j] < grid[i][j]) &&
-    (grid[i+1][j] < grid[i][j]) &&
-    (grid[i][j-1] < grid[i][j]) &&
-    (grid[i][j+1] < grid[i][j]) &&
-    )
-    {
-        return true;
-    } else return false;
+    if ((grid[i-1][j] < grid[i][j]) &&
+        (grid[i+1][j] < grid[i][j]) &&
+        (grid[i][j-1] < grid[i][j]) &&
+        (grid[i][j+1] < grid[i][j]))
+            return true;
+    else 
+        return false;
 }
