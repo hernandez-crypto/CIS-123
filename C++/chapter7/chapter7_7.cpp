@@ -112,17 +112,21 @@ int crossings(double x[], int n)
 
 double mean(int n, double data[])
 {
+     // declare and init objs
     int i;
     double mean;
     double sum = 0;
 
+     // determine sum of all numbers
     for (i=0;i<n;i++)
     {
         sum += data[i];
     }
 
+    //  determine mean
     mean = sum / n;
 
+    // return mean
     return mean;
 
 
@@ -130,20 +134,23 @@ double mean(int n, double data[])
 
 double variance(int n, double data[])
 {
+     // declare and init objs
     int i;
     double meanResult, temp, squared, total = 0, variance;
 
+    // determine mean
     meanResult = mean(n, data);
 
-
+     // determine variance
     for (i=0; i<n; i++)
     {
             temp = (data[i]-meanResult);
             squared = (temp * temp);
             total += squared;
     }
-
     variance = total / (n - 1);
+
+    // return variance
     return variance;
 
 }
@@ -151,6 +158,7 @@ double variance(int n, double data[])
 
 double std_dev (int n, double data[])
 {
+     // declare and init objs
     double varianceResult, stdDev;
     varianceResult = variance(n, data);
     stdDev = sqrt(varianceResult);
@@ -160,6 +168,7 @@ double std_dev (int n, double data[])
 
 double min_value(int n, double data[])
 {
+     // declare and init objs
     int i;
     double minValue;
 
@@ -171,7 +180,9 @@ double min_value(int n, double data[])
 
 double median(int n, double data[])
 {
+     // declare and init objs
     double medianVal;
+
     if(n % 2)
         medianVal = data[n/2];
     else
@@ -183,7 +194,7 @@ double median(int n, double data[])
 
 double max_value(int n, double data[])
 {
-
+     // declare and init objs
     double maxValue;
 
     sort(n, data);
@@ -193,6 +204,7 @@ double max_value(int n, double data[])
 
 void sort(int n, double data[])
 {
+     // declare and init objs
     int i, j;
     double temp;
 
