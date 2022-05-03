@@ -1,3 +1,10 @@
+/*
+Julio Cesar Hernandez
+CIS 123 701
+May 3rd 2022
+
+This program works with pointers and reference/dereference operators.
+*/
 #include <iostream>
 
 using namespace std;
